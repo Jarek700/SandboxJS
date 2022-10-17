@@ -1,8 +1,8 @@
 
 function calculator() {
-    let nbr1 = Number(prompt("Podaj pierwszą liczbę:"));
-    let nbr2 = Number(prompt("Podaj drugą liczbę:"));
-    let sign = prompt("Podaj znak (+,-,/,*):")
+    const nbr1 = Number(prompt("Podaj pierwszą liczbę:"));
+    const nbr2 = Number(prompt("Podaj drugą liczbę:"));
+    const sign = prompt("Podaj znak (+,-,/,*):")
     calculate(nbr1, nbr2, sign);
 }
 
@@ -11,19 +11,33 @@ function calculate(firstNumber, secondNumber, whatToDo) {
     validateNumber(secondNumber);
     validateMathsign(whatToDo);
     const text = "wynik twojego działania = "
+    var result = "";
     if (whatToDo === '+') {
-        alert(text + (firstNumber + secondNumber))
+        result = result + sum2args(firstNumber, secondNumber)
     }
     if (whatToDo === '-') {
-        alert(text + (firstNumber - secondNumber))
+        result = result + substraction2args(firstNumber, secondNumber)
     }
     if (whatToDo === '*') {
-        alert(text + (firstNumber * secondNumber))
+        result = result + multiplication2args(firstNumber, secondNumber)
     }
     if (whatToDo === '/') {
-        alert(text + (firstNumber / secondNumber))
+        result = result + devide2args(firstNumber, secondNumber)
     }
+    alert(text + result);
+}
 
+const sum2args = (arg1, arg2) => {
+    return arg1 + arg2;
+}
+const devide2args = (arg1, arg2) => {
+    return arg1 / arg2;
+}
+const substraction2args = (arg1, arg2) => {
+    return arg1 - arg2;
+}
+const multiplication2args = (arg1, arg2) => {
+    return arg1 * arg2;
 }
 
 function validateNumber(value) {
