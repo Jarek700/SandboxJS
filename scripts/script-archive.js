@@ -1,4 +1,3 @@
-console.log('jo jo to jest testowy log');
 
 //Stwórz program, który przyjmie od użytkownika przez prompt imię, a następnie 15 nazwisko, na końcu wiek (3 prompt-y). Tylko jeżeli wiek to min. 18 to wyświetl w konsoli imię i nazwisko.
 
@@ -57,47 +56,48 @@ function startzad3() {
 /* Napisz kod który odwraca tworzy nowego stringa odwracając kolejność stringa na którym wykonywane jest zadanie */
 /* Nie używamy własnych ani wbudowanych funkcji (na to za wcześnie), używamy tylko pętli.*/
 
-const startText = "Jestem tutaj";
-let reverseText = "";
+function different() {
+    const startText = "Jestem tutaj";
+    let reverseText = "";
 
-for (let i = 0; i < startText.length; i++) {
+    for (let i = 0; i < startText.length; i++) {
 
-    reverseText += startText[startText.length - 1 - i]
-}
-
-console.log(reverseText);
-
-/* zmieniłem sobie na tablcę bo chciałem :p a potem skonwertowałem na tekst */
-const startText3 = "Jestem tutaj";
-let reverseText3 = [];
-
-for (let i = 0; i < startText3.length; i++) {
-    reverseText3[i] = startText3[startText3.length - 1 - i]
-}
-
-console.log(String(reverseText3).replaceAll(",", ""));
-
-
-
-/* Napisz kod który zmienia wszystkie a w tekście na x, a b (małe i duże) na z. Mozesz użyć tylko pętli i instrukcji warunkowej */
-
-const startText2 = "Hejka, tutaj Beata 'betka' Kowalska!";
-let reverseText2 = "";
-
-for (let i = 0; i < startText2.length; i++) {
-    if (startText2[i] === 'a') {
-        reverseText2 += 'x'
+        reverseText += startText[startText.length - 1 - i]
     }
-    else if (startText2[i] === 'b' || startText2[i] === 'B') {
-        reverseText2 += 'z'
-    }
-    else {
-        reverseText2 += startText2[i]
-    }
-}
-console.log(startText2);
-console.log(reverseText2);
 
+    console.log(reverseText);
+
+    /* zmieniłem sobie na tablcę bo chciałem :p a potem skonwertowałem na tekst */
+    const startText3 = "Jestem tutaj";
+    let reverseText3 = [];
+
+    for (let i = 0; i < startText3.length; i++) {
+        reverseText3[i] = startText3[startText3.length - 1 - i]
+    }
+
+    console.log(String(reverseText3).replaceAll(",", ""));
+
+
+
+    /* Napisz kod który zmienia wszystkie a w tekście na x, a b (małe i duże) na z. Mozesz użyć tylko pętli i instrukcji warunkowej */
+
+    const startText2 = "Hejka, tutaj Beata 'betka' Kowalska!";
+    let reverseText2 = "";
+
+    for (let i = 0; i < startText2.length; i++) {
+        if (startText2[i] === 'a') {
+            reverseText2 += 'x'
+        }
+        else if (startText2[i] === 'b' || startText2[i] === 'B') {
+            reverseText2 += 'z'
+        }
+        else {
+            reverseText2 += startText2[i]
+        }
+    }
+    console.log(startText2);
+    console.log(reverseText2);
+}
 
 
 function piramidInConsole() {
