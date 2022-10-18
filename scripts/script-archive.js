@@ -47,10 +47,11 @@ function startzad3() {
             convertedTekst[i] = textToConvert[i].toLowerCase();
         }
     }
-
+    const convertedTekstString = convertedTekst.join("");
     convertedTekst = String(convertedTekst).replaceAll(",", " ");
 
     console.log(convertedTekst);
+    console.log(convertedTekstString);
 };
 
 /* Napisz kod który odwraca tworzy nowego stringa odwracając kolejność stringa na którym wykonywane jest zadanie */
