@@ -1,9 +1,21 @@
+html {
+    background-color: #555555;
+}
 p {
     font-size: 48px;
     color: goldenrod;
     font-family: Arial;
 }
 
-a {}
+a {
+    text-decoration: none;
+}
 
-button {}
+button {
+    display: block;
+    margin: 10px;
+    padding: 15px;
+    margin: solid, 2px;
+    background-color: #3b3c41;
+    color: aliceblue;
+}
