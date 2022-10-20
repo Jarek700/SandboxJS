@@ -42,3 +42,4 @@ const arrayOfResults = () => {
     aMalysz.checkIfEverWon();
     legia.checkIfEverWon();
 }
+
