@@ -3,9 +3,10 @@
 //create class that keeps table of results & method that allows to add new results to the table.
 const arrayOfResults = () => {
     class SportsMan {
-        constructor(name, results = []) {
+        constructor(name, ...results) {
             this.name = name;
-            this.results = results;
+            this.results = [...results];
+            this.cos = 100;
         }
         addResult(resultToAdd) {
             return this.results.push(resultToAdd);
@@ -23,17 +24,16 @@ const arrayOfResults = () => {
                 console.log(this.name + " you mf loooooooooserrrrr af !")
             }
         }
-    }
 
+    }
     const aMalysz = new SportsMan('Adam', ['1', '2', '3']);
     aMalysz.addResult('olimpiada');
-    console.log(aMalysz);
     aMalysz.addResult('1');
     aMalysz.addResult('PŚ');
     aMalysz.addResult('4Skocznie');
     console.log(aMalysz);
 
-    const legia = new SportsMan('LegiaWLidze');
+    const team = new SportsMan('ZespółWLidze');
     legia.addResult("15");
     legia.addResult("3");
     legia.addResult("30");
