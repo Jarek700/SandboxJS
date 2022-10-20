@@ -14,7 +14,7 @@ const arrayOfResults = () => {
         checkIfEverWon() {
             let wins = 0
             for (let i = 0; i < this.results.length; i++) {
-                if (this.results[i] == 1) {
+                if (this.results[i] === 1) {
                     wins += 1;
                 } 
             }
@@ -26,20 +26,20 @@ const arrayOfResults = () => {
         }
 
     }
-    const aMalysz = new SportsMan('Adam', ['1', '2', '3']);
+    const aMalysz = new SportsMan('Adam', [1, 2, 3]);
     aMalysz.addResult('olimpiada');
-    aMalysz.addResult('1');
+    aMalysz.addResult(1);
     aMalysz.addResult('PŚ');
     aMalysz.addResult('4Skocznie');
     console.log(aMalysz);
 
     const team = new SportsMan('ZespółWLidze');
-    legia.addResult("15");
-    legia.addResult("3");
-    legia.addResult("30");
-    console.log(legia);
+    team.addResult(15);
+    team.addResult(3);
+    team.addResult(30);
+    console.log(team);
     // * 5.* Dodaj metodę, która sprawdzi czy kraj posiada jakiekolwiek pierwsze miejsce i jeżeli tak to wyświetl "Brawo!".
     aMalysz.checkIfEverWon();
-    legia.checkIfEverWon();
+    team.checkIfEverWon();
 }
 
