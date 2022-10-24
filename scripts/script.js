@@ -30,3 +30,28 @@ const cityscritp = () => {
         .map(cityToUpper2)
         .forEach(displayCities2);
 }
+
+
+//////////////////////Asynchroniczność ///////////////////////////
+const askyncscript = () => {
+    console.log("1 wyświetl odrazu");
+    setTimeout(() => {
+        console.log("wyświetl po 1s")
+    }, 1000);    //ciało funkcji wykona się za 1s  
+    console.log("2 wyświetl odrazu");
+
+    setInterval(() => {
+        console.log("wyświetlaj wielokrotnie co 1s")
+    }, 1000);        //ciało funkcji będzie wykonywanie co sekundę 
+
+}
+const askyncOrder = () => {
+    setTimeout(() => {                      ///jako że jest timeout, nawet najmniejszy wykonanie tej funkcji będzie po funkcjach tkóre nie muszą czekać.
+        console.log("wyświetl po 1/1000 s")     //ta funkcja jest już gotowa ale musi czekać
+    }, 1);
+    for (let i = 0; i < 5000; i++) {
+        console.log(i);
+    }
+    console.log("wyświetli odrazu")
+}
+
