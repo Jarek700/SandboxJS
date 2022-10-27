@@ -585,8 +585,8 @@ const asyncAwait = async () => {
 };
 
 
-const aRequire = async () => {                                                      //ta funkcja działa tylko na backendzie
-    const { setTimeout } = require('timers/promises');
+const aRequire = () => {
+    //const { setTimeout } = require('timers/promises');
 
     const invervalId = setInterval(() => console.log('C'), 100);
 
@@ -612,3 +612,4 @@ const aRequire = async () => {                                                  
         console.log("napoje gotowe");
     })();
 }
+
