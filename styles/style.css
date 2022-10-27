@@ -2,6 +2,7 @@ html {
     background-color: #555555;
     padding: 0;
         margin: 0;
+        color: rgb(198, 228, 255);
 }
 p {
     font-size: 48px;
@@ -15,6 +16,8 @@ nav {
 }
 a {
     text-decoration: none;
+    text-decoration-color: aquamarine;
+        color: blanchedalmond;
 }
 
 button {
