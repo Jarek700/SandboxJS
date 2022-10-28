@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Zabawy z DOM em</title>
+    <style>
+        .darkMode {
+            background-color: black;
+            color: antiquewhite;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,8 +21,21 @@
     </nav>
 
     <h1>Nagłówek 1</h1>
+    <p> par 1 </p>
+    <p class="par2 secondTestClass"> par 2 </p>
+    <p id="id3"> par 3 </p>
     <a href="">link</a>
-    <button>Guzik</button>
+    <button id="btn-toggle-color">Guzik</button></br>
+    
+    <button id="increaseCount-btn">Increase count</button>
+    <button id="resetCount-btn">Reset count</button>
+    <h2 id="counter">0</h2>
+    
+    <button id="increaseCountsave-btn">Increase count and save</button>
+    <button id="resetCountsave-btn">Reset count and save</button>
+    <h2 id="counterSaved">0</h2>
+    
+    <h2 id="localStorageData">localStorageData</h2>
 
     <script src="../scripts/dom.js"></script>
 </body>
