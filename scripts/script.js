@@ -1,5 +1,5 @@
 
-////////////////////Array reduce
+////////////////////Array reduce  uruchamiać w node.js
 const array = [1, 2, 3];
 //reduce może przyjąć 4 parametry: poprzednia zwrócona wartośc, elementTablicy, indekselementu, oryginalnaTablica
 //metoda jest callbackowana tyle razy ile jest elementów w tablicy
