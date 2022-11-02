@@ -127,10 +127,141 @@ if (informations === null) {
 
 // Zadanie 1
 // Na stronie jest pytanie „Jak się czujesz?”. Są dwa przyciski „dobrze” i „źle”. Pod spodem wyświetlaj informację ile razy kliknięto dotychczas który przycisk.
+const btnGood = document.querySelector('#good');
+const countGood = document.querySelector('#countGood');
+const btnBad = document.querySelector('#bad');
+const countBad = document.querySelector('#countBad');
+
+var sumOfGood = Number(localStorage.getItem('saveSumOfGood'));
+var sumOfBad = Number(localStorage.getItem('saveSumOfBad'));
+const updateSumOfGood = () => { countGood.innerText = String(sumOfGood) };
+const updateSumOfBad = () => { countBad.innerText = String(sumOfBad) };
+const saveSumOfGood = () => { localStorage.setItem('saveSumOfGood', sumOfGood.toString()) };
+const saveSumOfBad = () => { localStorage.setItem('saveSumOfBad', sumOfBad.toString()) };
+if (sumOfGood === null) {
+    localStorage.setItem('saveSumOfGood', '0');
+}
+if (sumOfBad === null) {
+    localStorage.setItem('saveSumOfBad', '0');
+}
+updateSumOfGood();
+updateSumOfBad();
+
+btnGood.addEventListener('click', () => {
+    sumOfGood++;
+    saveSumOfGood();
+    updateSumOfGood();
+});
+btnBad.addEventListener('click', () => {
+    sumOfBad++;
+    saveSumOfBad();
+    updateSumOfBad();
+});
 
 
 // Zadanie 2
 // Zapisuj dane z zadania 1 w obiekcie.
+const buttonGood = document.querySelector('#btn-good');
+const moodCounter = document.querySelector('#h-count');
+const buttonBad = document.querySelector('#btn-bad');
+
+const moodInfo = localStorage.getItem('moood')
+if (moodInfo === null) {
+    mood = {
+        good: 0,
+        bad: 0,
+    }
+    localStorage.setItem('moood', JSON.stringify(mood));
+}
+else {
+    mood = JSON.parse(moodInfo);
+}
+
+const updatePage = () => {
+    const { good, bad } = mood;
+    moodCounter.innerText = `good = ${good} and bad = ${bad}`
+};
+
+const updateMood = () => {
+    localStorage.setItem('moood', JSON.stringify(mood))
+};
+updatePage();
+
+buttonGood.addEventListener('click', () => {
+    mood.good++;
+    updateMood();
+    updatePage();
+})
+
+buttonBad.addEventListener('click', () => {
+    mood.bad++;
+    updateMood();
+    updatePage();
+})
+
 
 // Zadanie 3
-// Klikasz na przycisk to pyta o liczbę. Zapisuje w tablicy, która jest przechowywana w localStorage. Na stronie wyświetla sumę elementów tej tablicy.
+// Klikasz na przycisk to pyta o liczbę.
+// Zapisuje w tablicy, która jest przechowywana w localStorage.
+// Na stronie wyświetla sumę elementów tej tablicy.
+
+const tablebtn = document.querySelector('#tableOfNum-btn');
+const sumOfItems = document.querySelector('#sumFromTable');
+
+const tableInfo = localStorage.getItem('values')
+if (tableInfo === null) {
+    table = [];
+    localStorage.setItem('values', JSON.stringify(table))
+} else {
+    table = JSON.parse(tableInfo);
+}
+
+tablebtn.addEventListener('click', () => {
+    const nbr = Number(prompt('Podaj liczbę do doadnia:'));
+    table.push(nbr);
+    saveTable();
+    updateSum(table);
+})
+
+const saveTable = () => {
+    localStorage.setItem('values', JSON.stringify(table));
+}
+
+const updateSum = (table) => {
+    let sum = 0;
+    table.forEach(element => {
+        sum += element;
+    });
+    sumOfItems.innerText = sum.toString();
+}
+
+// Zadanie 3 v2
+const addBtn = document.querySelector('.btn-add-number');
+const numbersP = document.querySelector('.p-numbers');
+const sumH1Span = document.querySelector('.span-sum');
+
+let numbers = localStorage.getItem('numbers');
+if (numbers === null) {
+    numbers = [];
+} else {
+    numbers = JSON.parse(numbers); // Nie zapominaj o tym!
+}
+
+const showNumbersAndSum = () => {
+    numbersP.innerText = numbers.join(', '); // Połącz tablicę w tekst
+    sumH1Span.innerText = numbers.reduce((prev, curr) => prev + curr, 0); // Jest o tym w lekcji o zaawansowanych pętlach i reduce
+};
+
+showNumbersAndSum();
+
+addBtn.addEventListener('click', () => {
+    const userNumber = Number(prompt('Podaj liczbę:'));
+    if (Number.isNaN(userNumber)) {
+        alert('Nieprawidłowa liczba!');
+        return; // Wyjdź,  nie dodawaj
+    }
+
+    numbers.push(userNumber);
+    localStorage.setItem('numbers', JSON.stringify(numbers));
+    showNumbersAndSum();
+});
